@@ -1,0 +1,102 @@
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="showModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="w-100 text-center">
+                    <!-- Center the content -->
+                    <h2 class="modal-title" id="exampleModalLabel">Get <b>started</b></h2>
+                    <div><span>Please enter your Mobile Number to continue</span></div>
+                    <!-- Moved here -->
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="uname1" />
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="bi bi-file-earmark-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                                    aria-describedby="basic-addon1" [(ngModel)]="upass1" />
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary" type="button" (click)="validateUser()" [disabled]="isButtonDisabled">Login</button>
+                            </div>
+                            <div class="text-center" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                                data-bs-dismiss="modal">Register?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="w-100 text-center">
+                    <!-- Center the content -->
+                    <h2 class="modal-title" id="exampleModalLabel">Get <b>started</b></h2>
+                    <div><span>Please enter your Details to continue</span></div>
+                    <!-- Moved here -->
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="uname" />
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="bi bi-file-earmark-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                                    aria-describedby="basic-addon1" [(ngModel)]="upass" />
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+                                <input type="tel" class="form-control" placeholder="Mobile Number" aria-label="Mobile Number"
+                                    aria-describedby="basic-addon1" [(ngModel)]="mno" />
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="bi bi-file-earmark-lock"></i></span>
+                                <input type="email" class="form-control" placeholder="Email" aria-label="email"
+                                    aria-describedby="basic-addon1" [(ngModel)]="email" />
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="bi bi-file-earmark-lock"></i></span>
+                                <input type="text" class="form-control" placeholder="Full Name" aria-label="Fname"
+                                    aria-describedby="basic-addon1" [(ngModel)]="fname" />
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button class="btn btn-primary" type="button" (click)="registerUser()">Register</button>
+                            </div>
+                            <div>By confirming, you agree to boAt's Terms and Conditions and Privacy Policy.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+</div>

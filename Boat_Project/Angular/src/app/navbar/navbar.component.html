@@ -1,0 +1,490 @@
+<style>
+    nav a:hover {
+      font-weight: bolder;
+      color: black;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    li {
+      margin-left: 1rem;
+    }
+
+    .offcanvas-body{
+      overflow-y: scroll;
+    }
+  </style>
+  <div>
+    <a href="#" class="nav-link">
+      <p
+        style="
+          background-color: #eff4f7;
+          text-align: center;
+          font-size: 14px;
+          padding: 10px;
+          font-weight: 1px;
+          text-shadow: 0px 0px 1px gray;
+          cursor: pointer;
+        "
+      >
+        30dB ANC, AI-driven ENx™ Tech, & more all ₹1499 in all new Rockerz 210
+        ANC. Shop Now!
+      </p>
+    </a>
+  </div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light sticky-top"
+    style="background-color: white; border-bottom: 1px solid gray"
+  >
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img
+          width="85"
+          height="34"
+          src="//www.boat-lifestyle.com/cdn/shop/files/boAt_logo_small_3067da8c-a83b-46dd-b28b-6ef1e16ccd17_small.svg?v=1693549434"
+          alt=""
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Boat Personalization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Corporate Orders</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Daily Deals</a></li>
+              <li><a class="dropdown-item" href="#">Blogs</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Refer & Earn</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Careers</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Social Responsibility</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Store Locator</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">boAt Community</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <div
+              class="input-group has-feedback has-feedback-left border rounded-pill"
+            >
+              <i class="bi bi-search" style="margin: 10px"></i>
+              <input
+                class="form-control rounded-pill border-0 shadow-none"
+                placeholder="Search Products"
+              />
+            </div>
+          </li>
+          <li class="nav-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i
+              class="bi bi-person"
+              style="font-size: 1.5rem; color: black; transition: none"
+            ></i>
+          </li>
+          <li class="nav-item">
+            <div
+              class="cartdiv"
+              style="
+                position: relative;
+                width: fit-content;
+                margin: 0;
+                padding: 0;
+              "
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            >
+              <div>
+                <i
+                  [class]="st"
+                  style="font-size: 1.5rem; color: black; transition: none"
+                ></i>
+              </div>
+              <div
+                [style.display]="displayCount"
+                style="
+                  position: absolute;
+                  background-color: red;
+                  width: 1rem;
+                  height: 1rem;
+                  border-radius: 50%;
+                  top: 0;
+                  right: -6px;
+                "
+              >
+                <div style="font-size: 10px; text-align: center; color: white">
+                  {{ count }}
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Cart Slider-->
+  <div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel">Your Cart</h5>
+      <button
+        type="button"
+        class="btn-close text-reset"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <div>
+      <div
+        class="container"
+        style="
+          border-radius: 10px;
+          border: solid 1px #e8ebed;
+          background-color: #eff3f5;
+          display: flex;
+          gap: 10px;
+          padding: 10px;
+        "
+      >
+        <div class="signintext">
+          Sign in to Redeem boAt reward points on this order
+        </div>
+        <div class="signinbutton">Sign In</div>
+      </div>
+    </div>
+    <div class="offcanvas-body" style="position: relative">
+      
+      <div class="productsdiv"  *ngFor="let productObj of prodArray" >
+        <div
+          style="
+            display: flex;
+            margin: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid gray;
+          "
+        >
+          <div style="margin-right: 10px">
+            <img
+              src="{{ productObj.imgUrl }}"
+              alt=""
+              width="90"
+              height="90"
+              style="border-radius: 10px; background-color: #e8ebed"
+            />
+          </div>
+          <div style="display: grid">
+            <div class="h6">{{ productObj.productName }}</div>
+            <div style="display: flex"></div>
+            <div class="h5">₹ {{ productObj.unitPrice }}</div>
+            <div class="input-group quantityselector border-0">
+              <button class="minus" type="button" id="button-addon1">
+                <i class="bi bi-dash"></i>
+              </button>
+              <input type="number" class="numbox border-0" value="01" disabled />
+              <button class="plus" type="button" id="button-addon2" >
+                <i class="bi bi-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div
+        style="
+          width: 100%;
+          box-shadow: 0px 0px 5px gray;
+          position: relative;
+          bottom: 0;
+          right: 0;
+          padding: 10px;
+          
+        "
+      >
+        <div
+          class="container"
+          style="
+            border-radius: 10px;
+            border: solid 1px #e8ebed;
+            background-color: #eff3f5;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+           
+          "
+        >
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="22.472"
+              height="23.348"
+              viewBox="0 0 22.472 23.348"
+            >
+              <defs>
+                <clipPath id="clip-path">
+                  <rect
+                    id="Rectangle_116108"
+                    data-name="Rectangle 116108"
+                    width="22.472"
+                    height="23.348"
+                    fill="none"
+                  ></rect>
+                </clipPath>
+              </defs>
+              <g
+                id="Group_337143"
+                data-name="Group 337143"
+                transform="translate(0 0)"
+              >
+                <g
+                  id="Group_337142"
+                  data-name="Group 337142"
+                  transform="translate(0 0)"
+                  clip-path="url(#clip-path)"
+                >
+                  <path
+                    id="Path_346390"
+                    data-name="Path 346390"
+                    d="M21.657,12.326a1.261,1.261,0,0,1,0-1.306l.41-.667a2.747,2.747,0,0,0-1.29-3.973l-.724-.3a1.245,1.245,0,0,1-.769-1.059l-.06-.785a2.757,2.757,0,0,0-3.38-2.457l-.764.181a1.255,1.255,0,0,1-1.244-.4l-.506-.6a2.747,2.747,0,0,0-4.18,0l-.511.6a1.253,1.253,0,0,1-1.245.4l-.764-.181a2.757,2.757,0,0,0-3.38,2.457l-.06.785A1.246,1.246,0,0,1,2.42,6.078l-.724.3A2.748,2.748,0,0,0,.4,10.352l.41.667a1.261,1.261,0,0,1,0,1.306L.4,13a2.75,2.75,0,0,0,1.29,3.974l.724.3a1.241,1.241,0,0,1,.769,1.052l.06.785a2.749,2.749,0,0,0,3.38,2.454l.764-.181a1.267,1.267,0,0,1,1.245.4l.511.6a2.752,2.752,0,0,0,4.179,0l.506-.6a1.267,1.267,0,0,1,1.244-.4l.764.181a2.749,2.749,0,0,0,3.38-2.454l.06-.785a1.241,1.241,0,0,1,.769-1.051l.724-.3a2.72,2.72,0,0,0,.38-.194A2.749,2.749,0,0,0,22.066,13ZM7.382,9.18v0a1,1,0,1,1,1,1,1,1,0,0,1-1-1M8.764,15.2a.728.728,0,0,1-.527.219A.747.747,0,0,1,7.7,14.153l0,0,6-6a.749.749,0,0,1,1.086,1.031l-.028.028Zm5.622-.031a1,1,0,0,1-1-.992v-.007a1,1,0,1,1,1,1"
+                    transform="translate(0 0)"
+                    fill="#1a2024"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="h6">Apply Coupon</div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+            >
+              <mask
+                id="mask0_6272_265"
+                style="mask-type: alpha"
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="11"
+                height="11"
+              >
+                <rect
+                  width="11"
+                  height="11"
+                  transform="matrix(1 0 0 -1 0 11)"
+                  fill="url(#pattern0)"
+                ></rect>
+              </mask>
+              <g mask="url(#mask0_6272_265)">
+                <rect
+                  x="-5"
+                  y="13"
+                  width="18"
+                  height="18"
+                  transform="rotate(-90 -5 13)"
+                  fill="black"
+                ></rect>
+              </g>
+              <defs>
+                <pattern
+                  id="pattern0"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_6272_265"
+                    transform="scale(0.00195312)"
+                  ></use>
+                </pattern>
+                <image
+                  id="image0_6272_265"
+                  width="512"
+                  height="512"
+                  xlink:href="data:image/png;base64,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"
+                ></image>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            margin-top: 10px;
+            width: 100%;
+            justify-content: space-between;
+          "
+        >
+          <div>
+            <h5 style="margin-bottom: 0px">
+              <i class="bi bi-currency-rupee"></i>{{cartSum}}
+            </h5>
+            <i style="color: gray; font-size: small"> Inclusive of all taxes </i>
+          </div>
+          <div style="width: 50%">
+            <button
+              class="btn btn-dark"
+              type="button"
+              style="
+                border-radius: 10px;
+                font-size: 16px;
+                justify-content: center;
+                font-weight: 500;
+                height: 100%;
+                width: 100%;
+              "
+            >
+              Order Product
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <div class="w-100 text-center">
+                  <!-- Center the content -->
+                  <h2 class="modal-title" id="exampleModalLabel">Get <b>started</b></h2>
+                  <div><span>Please enter your Mobile Number to continue</span></div>
+                  <!-- Moved here -->
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="container">
+                  <div class="card bg-light">
+                      <div class="card-body">
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+                              <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                  aria-describedby="basic-addon1" [(ngModel)]="uname1" />
+                          </div>
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1"><i
+                                      class="bi bi-file-earmark-lock"></i></span>
+                              <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                                  aria-describedby="basic-addon1" [(ngModel)]="upass1" />
+                          </div>
+                          <div class="d-grid">
+                              <button class="btn btn-primary" type="button" (click)="validateUser()" data-bs-dismiss='modal' [disabled]="isButtonDisabled">Login</button>
+                          </div>
+                          <div class="text-center" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                              data-bs-dismiss="modal">Register?</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <div class="w-100 text-center">
+                  <!-- Center the content -->
+                  <h2 class="modal-title" id="exampleModalLabel">Get <b>started</b></h2>
+                  <div><span>Please enter your Details to continue</span></div>
+                  <!-- Moved here -->
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="container">
+                  <div class="card bg-light">
+                      <div class="card-body">
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1" ><i class="bi bi-person"></i></span>
+                              <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                  aria-describedby="basic-addon1" [(ngModel)]="uname" />
+                          </div>
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1"><i
+                                      class="bi bi-file-earmark-lock"></i></span>
+                              <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                                  aria-describedby="basic-addon1" [(ngModel)]="upass" />
+                          </div>
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+                              <input type="tel" class="form-control" placeholder="Mobile Number" aria-label="Mobile Number"
+                                  aria-describedby="basic-addon1" [(ngModel)]="mno" />
+                          </div>
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1"><i
+                                      class="bi bi-file-earmark-lock"></i></span>
+                              <input type="email" class="form-control" placeholder="Email" aria-label="email"
+                                  aria-describedby="basic-addon1" [(ngModel)]="email" />
+                          </div>
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1"><i
+                                      class="bi bi-file-earmark-lock"></i></span>
+                              <input type="text" class="form-control" placeholder="Full Name" aria-label="Fname"
+                                  aria-describedby="basic-addon1" [(ngModel)]="fname" />
+                          </div>
+                          
+                          <div class="d-grid">
+                              <button class="btn btn-primary" type="button" (click)="registerUser()">Register</button>
+                          </div>
+                          <div>By confirming, you agree to boAt's Terms and Conditions and Privacy Policy.</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+  </div>
+</div>

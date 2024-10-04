@@ -1,0 +1,24 @@
+<div class="container-fluid mb-4">
+  <div class="row">
+    <div class="col-6">
+      <p class="h3">
+        Explore
+        <strong>Bestselle<u style="text-decoration-color: red">rs</u></strong>
+      </p>
+    </div>
+  </div>
+  <div class="row flex-nowrap" style="overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;" >
+    <div class="col-3 d-inline-block" *ngFor="let item of vid" style="cursor: pointer;" [routerLink]="['/Catprod', item.name]">
+      <div class="card mx-2 mt-2 border-0" >
+        <video [src]="item.vidUrl" class="card-img-top" muted playsinline (mouseenter)="playVideo($event)" 
+        (mouseleave)="pauseVideo($event)" style="border-radius: 10px;">
+        </video>
+      </div>
+      <div class="card-body text-center">
+        <div class="card-title">
+          <p id="card_vid">{{ item.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

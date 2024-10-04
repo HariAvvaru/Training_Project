@@ -1,0 +1,64 @@
+.signintext {
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: -0.48px;
+  }
+  .signinbutton {
+    width: 50%;
+    height: 31px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    background-color: #1b2024;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .quantityselector {
+    border: 1px solid #eff3f5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+  }
+  .minus {
+    background-color: #eff3f5;
+    color: #1a2024;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    height: 100%;
+  }
+  
+  .numbox {
+    font-weight: 500;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 14px;
+    width: 44px;
+  }
+  i {
+    width: 8px;
+    height: 2px;
+    font-weight: bold;
+  }
+  .plus {
+    background: #eff3f5;
+    color: #1a2024;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    height: 100%;
+  }
+  

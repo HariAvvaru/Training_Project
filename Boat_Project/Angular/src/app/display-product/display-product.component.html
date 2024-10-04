@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap"
+    style="overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none;">
+    <div class="productcard border-0 m-2" *ngFor="let item of productsArray" [routerLink]="['/ProductDet', item.productId]">
+      <div class="imagecontainer">
+        <a href="#"><img [src]="item.imgUrl" alt="" width="100%" /></a>
+        <span class="personalised-icon">
+          <a href="#"><img
+              src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/personalisation_ca8237cd-20ca-4da7-8ad2-7d8a50320b3c.png?v=1724308287"
+              alt="Personalization" loading="lazy" width="29" height="29" /></a>
+        </span>
+        <span class="labeltext"> {{item.productSpecification}} </span>
+        <div class="rating">
+          <span style="font-size: 8px; font-weight: 700">
+            <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/star-5.png?v=1722331088" alt="star"
+              loading="lazy" width="8px" height="8px" />
+            {{item.rating}}
+          </span>
+        </div>
+      </div>
+      <div class="productinfo">
+        <a href="" style="text-decoration: none; color: black; font-weight: 700">
+          {{item.productName}}
+        </a>
+      </div>
+      <hr />
+      <b style="margin-top: 0"><i class="bi bi-currency-rupee"></i>{{item.finalPrice | number:'1.0-0'}}</b>
+      <p style="color: rgb(10, 198, 132); margin: 0 2px 2%">
+        <span class="text-decoration-line-through" style="color: gray; font-size: 10px; margin-right: 10px"><i
+            class="bi bi-currency-rupee"></i>{{item.unitPrice}}</span>
+        <b style="font-size: 11px">{{item.discount}}% off</b>
+      </p>
+    </div>
+  </div>
+</div>

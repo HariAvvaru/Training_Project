@@ -1,0 +1,14 @@
+#card_vid {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: normal;
+    opacity: 1;
+    margin: 0px;
+    padding: 0px;
+    color: rgb(0, 0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+}

@@ -1,0 +1,35 @@
+<div class="product-container">
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+      <div class="thumbnails-container">
+        <div *ngFor="let smallimg of imgArray" class="gallery-thumbnails">
+          <!-- Hover over this image to change the main image -->
+          <img [src]="smallimg" [srcset]="imgurl + ' 600w, ' + imgurl.replace('600x', '300x') + ' 300w'" sizes="(max-width: 600px) 300px, 600px" alt="Product Image" alt="product thumbnail" loading="eager" (mouseover)="updateMainImage(smallimg) " />
+        </div>
+      </div>
+      <div class="main-image">
+        <!-- Main product image that changes on hover -->
+        <img [src]="imgurl" alt="Main Product" />
+      </div>
+    </div>
+  
+    <!-- Product Details Section -->
+    <div class="product-details" *ngIf="productArray">
+      <h1>{{productArray.productName}}</h1>
+      <p class="product-desc">
+        {{productArray.productDescription}}
+      </p>
+      <div class="price-section">
+        <span class="current-price">{{productArray.finalPrice | number:'1.0-0'}}</span>
+        <span class="original-price">{{productArray.unitPrice}}</span>
+        <span class="discount">{{productArray.discount}}% Off</span>
+      </div>
+      <p>MRP (Inclusive of all taxes)</p>
+  
+      <div class="cart">
+        <input type="button" value="Buy now" />
+        <input type="button" value="Add to Cart" />
+      </div>
+    </div>
+  </div>
+  

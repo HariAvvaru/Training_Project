@@ -1,0 +1,84 @@
+<div style="display: flex; flex-wrap: wrap">
+  <div
+    class="categorycard"
+    style="display: flex; gap: 10px"
+    *ngFor="let item of productsArray"
+  >
+    <div class="productcard">
+      <div class="imagecontainer">
+        <a href="#"><img [src]="item.imgUrl" alt="" width="100%" /></a>
+        <span class="personalised-icon">
+          <a href="#"
+            ><img
+              src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/personalisation_ca8237cd-20ca-4da7-8ad2-7d8a50320b3c.png?v=1724308287"
+              alt="Personalization"
+              loading="lazy"
+              width="29"
+              height="29"
+          /></a>
+        </span>
+        <span class="labeltext"> {{ item.productSpecification }} </span>
+      </div>
+    </div>
+    <div class="grid" style="width: 50%; position: relative">
+      <div class="rating">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/star-5.png?v=1722331088"
+          alt="star"
+          loading="lazy"
+          width="15px"
+          height="15px"
+        />
+        <span style="font-size: 15px; font-weight: 400">
+          {{ item.rating }}
+        </span>
+      </div>
+      <div class="productinfo">
+        <a
+          href=""
+          style="text-decoration: none; color: black; font-weight: 700"
+        >
+          {{ item.productName }}
+        </a>
+      </div>
+      <b style="margin-top: 0"
+        ><i class="bi bi-currency-rupee"></i
+        >{{ item.finalPrice | number : "1.0-0" }}
+      </b>
+      <span style="color: rgb(10, 198, 132); margin: 0 2px 2%">
+        <span
+          class="text-decoration-line-through"
+          style="color: gray; font-size: 10px; margin-right: 10px"
+          ><i class="bi bi-currency-rupee"></i>{{ item.unitPrice }}</span
+        >
+        <b style="font-size: 11px">{{ item.discount }}% off</b>
+      </span>
+      <div
+        style="
+          position: absolute;
+          width: 100%;
+          bottom: 10px;
+          padding-right: 10px;
+        "
+      >
+        <button
+          class="btn btn-dark"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+          style="
+            border-radius: 10px;
+            font-size: 16px;
+            justify-content: center;
+            font-weight: 500;
+            width: 100%;
+          "
+          (click)="addProd(item.productId)"
+                  >
+          Add To Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

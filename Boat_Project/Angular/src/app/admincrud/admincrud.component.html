@@ -1,0 +1,221 @@
+<div class="modal fade" id="exampleModalSelect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="w-100 text-center">
+                    <!-- Center the content -->
+                    <h2 class="modal-title" id="exampleModalLabel">
+                        <b>Update Product</b>
+                    </h2>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Product Name" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="pname" />
+                                <label for="floatingInput">Product Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Product Description"
+                                    aria-label="Password" aria-describedby="basic-addon1" [(ngModel)]="pdesc" />
+                                <label for="floatingInput">Product Description</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Product Specification"
+                                    aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="pspec" />
+                                <label for="floatingInput">Product Specification</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Product Price"
+                                    aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="pprice" />
+                                <label for="floatingInput">Product Price</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Quantity" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="pquant" />
+                                <label for="floatingInput">Quantity</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Discount" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="pdiscount" />
+                                <label for="floatingInput">Discount</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Category" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="pcat" />
+                                <label for="floatingInput">Category</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Review count" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="preview" />
+                                <label for="floatingInput">Review Count</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Rating" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="prating" />
+                                <label for="floatingInput">Rating</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Image URL" aria-label="Username"
+                                    aria-describedby="basic-addon1" [(ngModel)]="imgurl" />
+                                <label for="floatingInput">Image URL</label>
+
+                            </div>
+
+                            <div class="d-grid">
+                                <button class="btn btn-primary" type="button" (click)="updateButtonClick()">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalAddProd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="w-100 text-center">
+                    <!-- Center the content -->
+                    <h2 class="modal-title" id="exampleModalLabel"><b>Add Product</b></h2>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Product Username"
+                                    aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="pname" />
+                                <label for="floatingInput">Product Name</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Product Description"
+                                    aria-label="Description" aria-describedby="basic-addon1" [(ngModel)]="pdesc" />
+                                <label for="floatingInput">Product Description</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Product Specification"
+                                    aria-label="Specification" aria-describedby="basic-addon1" [(ngModel)]="pspec" />
+                                <label for="floatingInput">Product Specification</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" placeholder="Product Price" aria-label="Price"
+                                    aria-describedby="basic-addon1" [(ngModel)]="pprice" />
+                                <label for="floatingInput">Product Price</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity"
+                                    aria-describedby="basic-addon1" [(ngModel)]="pquant" />
+                                <label for="floatingInput">Quantity</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" placeholder="Discount" aria-label="Discount"
+                                    aria-describedby="basic-addon1" [(ngModel)]="pdiscount" />
+                                <label for="floatingInput">Discount</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Category" aria-label="Category"
+                                    aria-describedby="basic-addon1" [(ngModel)]="pcat" />
+                                <label for="floatingInput">Category</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" placeholder="Review count" aria-label="Review"
+                                    aria-describedby="basic-addon1" [(ngModel)]="preview" />
+                                <label for="floatingInput">Review Count</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" placeholder="Rating" aria-label="Rating"
+                                    aria-describedby="basic-addon1" [(ngModel)]="prating" />
+                                <label for="floatingInput">Rating</label>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Image URL" aria-label="Image"
+                                    aria-describedby="basic-addon1" [(ngModel)]="imgurl" />
+                                <label for="floatingInput">Image URL</label>
+
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary" type="button" (click)="addButtonClick()">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+<input type="button" value="Get Products" (click)="getDataButtonClick()" />
+<input type="button" value="Add Products" data-bs-toggle="modal" data-bs-target="#exampleModalAddProd" />
+<br /><br />
+
+
+
+<table class="table table-bordered text-center" *ngIf="productsArray.length > 0" border="2" align="center" style="width: max-content" cellpadding="2" cellspacing="0">
+    <thead>
+      <tr>
+        <th scope="col">Product ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Desc</th>
+        <th scope="col">Product Spec</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Category</th>
+        <th scope="col">Reviews Count</th>
+        <th scope="col">Discount</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Image URL</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productsArray">
+        <td>{{ item.productId }}</td>
+        <td>{{ item.productName }}</td>
+        <td>{{ item.productDescription }}</td>
+        <td>{{ item.productSpecification }}</td>
+        <td>{{ item.unitPrice }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.reviewsCount }}</td>
+        <td>{{ item.discount }}</td>
+        <td>{{ item.rating }}</td>
+        <td><img [src]=" item.imgUrl" style="width: 40px; height: 40px;"/></td>
+        <td>
+          <a href="javascript:void(0);" (click)="selectClick(item.productId)" data-bs-toggle="modal" data-bs-target="#exampleModalSelect">Select</a> |
+          <a href="javascript:void(0);" (click)="deleteClick(item.productId)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
